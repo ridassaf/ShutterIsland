@@ -17,3 +17,9 @@ Where $peg is the query gene of interest. Repeat this call for all pegs of inter
 https://www.tensorflow.org/hub/tutorials/image\_retraining
 
 To re-train the neural network on your own dataset, and test the re-trained model on new images.
+
+
+The file manualpegtopgf.tab is used to build a dictionary mapping each peg to its corresponding pgf in the reference genome dataset used. That is consequently used to color the arrows accordingly. 
+-- 
+
+The reference genomes we used are listed in the file 34\_genomes.pdf
