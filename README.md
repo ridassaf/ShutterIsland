@@ -18,7 +18,6 @@ https://www.tensorflow.org/hub/tutorials/image\_retraining
 
 To re-train the neural network on your own dataset, and test the re-trained model on new images.
 
-
 The file manualpegtopgf.tab is used to build a dictionary mapping each peg to its corresponding pgf in the reference genome dataset used. That is consequently used to color the arrows accordingly. 
 -- 
 
