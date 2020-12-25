@@ -16,7 +16,7 @@ The following steps were performed to generate the images:
 
 <h1> Transfer Learning </h1> 
 
-We followed the steps outlined in this tutorial to re-train the Inception V3 neural network on our generated images:
+We followed the steps outlined in this tutorial to re-train the Inception V3 neural network on our generated images using TensorFlow:
 
 https://www.tensorflow.org/hub/tutorials/image_retraining
 
