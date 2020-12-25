@@ -4,7 +4,7 @@ Steps taken to retrain the Inception V3 neural network on a Genomic Island datas
 
 1- Call the PATRIC Compare Region service through: 
 
-curl --max-time 300 --data-binary '{\"method\": \"SEED.compare\_regions\_for\_peg\", \"params\": [\"$peg\", 5000, 20, \"pgfam\", \"representative+reference\"], \"id\": 1}' https://p3.theseed.org/services/compare\_region"
+curl --max-time 300 --data-binary '{\"method\": \"SEED.compare\_regions\_for\_peg\", \"params\": [\"$peg\", 5000, 20, \"pgfam\", \"representative+reference\"], \"id\": 1}' https://p3.theseed.org/services/tf2\_compare\_region"
 
 Where $peg is the query gene of interest. Repeat this call for all pegs of interest and place all the output jsons in one folder (let's call it input\_jsons). 
 
