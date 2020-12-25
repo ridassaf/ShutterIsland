@@ -1,7 +1,7 @@
 # ShutterIsland
 
 * The file **34_genomes.pdf** lists the genomes used as the testing dataset. 
-* The file **manualpegtopfg.tab/** is used to map each gene to its corresponding family. This is used to infer functionality and determine the color of the arrow representing the gene in the generated images. 
+* The file **manualpegtopfg.tab** is used to map each gene to its corresponding family. This is used to infer functionality and determine the color of the arrow representing the gene in the generated images. 
 
 <h1> Image Generation </h1> 
 
@@ -12,7 +12,7 @@ The following steps were performed to generate the images:
     Where $peg is the query gene of interest. Repeat this call for all genes/pegs of interest and place all the output jsons in one folder (let's call it **input\_jsons**). 
 1. Run the program **JsonToCoordinates.py** with **input\_jsons** as input to parse the JSON files into a different format to be used by the image generating software. The resulting file will be **xyc.txt**, which is the input to **CoordsToJpg.java**. 
 1. Compile and run the Java program **CoordsToJpg.java** which will convert the coordinate file into images. 
-1. Split your images into the appropriate classes. 
+1. Split the images into the appropriate classes (an example can be found in the tutorial linked to below). 
 
 <h1> Transfer Learning </h1> 
 
