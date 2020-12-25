@@ -14,7 +14,7 @@ Where $peg is the query gene of interest. Repeat this call for all pegs of inter
 
 4- Split your images into the appropriate classes, then follow the tutorial on:
 
-https://www.tensorflow.org/hub/tutorials/tf2\_image\_retraining
+https://www.tensorflow.org/hub/tutorials/image_retraining
 
 To re-train the neural network on your own dataset, and test the re-trained model on new images.
 
