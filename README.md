@@ -1,24 +1,23 @@
 # ShutterIsland
 
-Steps taken to retrain the Inception V3 neural network on a Genomic Island dataset. 
+* The file **34_genomes.pdf** lists the genomes used as the testing dataset. 
+* The file **manualpegtopfg.tab/** is used to map each gene to its corresponding family. This is used to infer functionality and determine the color of the arrow representing the gene in the generated images. 
 
-1- Call the PATRIC Compare Region service through: 
+<h1> Image Generation </h1> 
 
-curl --max-time 300 --data-binary '{\"method\": \"SEED.compare\_regions\_for\_peg\", \"params\": [\"$peg\", 5000, 20, \"pgfam\", \"representative+reference\"], \"id\": 1}' https://p3.theseed.org/services/compare\_region"
+The following steps were performed to generate the images:
 
-Where $peg is the query gene of interest. Repeat this call for all pegs of interest and place all the output jsons in one folder (let's call it input\_jsons). 
+1. Call the Compare Region Viewer service provided by PATRIC. An example command is:
+    curl --max-time 300 --data-binary '{\"method\": \"SEED.compare\_regions\_for\_peg\", \"params\": [\"$peg\", 10000, 20, \"pgfam\", \"representative+reference\"], \"id\": 1}'         https://p3.theseed.org/services/compare\_region"
+    Where $peg is the query gene of interest. Repeat this call for all genes/pegs of interest and place all the output jsons in one folder (let's call it **input\_jsons**). 
+1. Run the program **JsonToCoordinates.py** with **input\_jsons** as input to parse the JSON files into a different format to be used by the image generating software. The resulting file will be **xyc.txt**, which is the input to **CoordsToJpg.java**. 
+1. Compile and run the Java program **CoordsToJpg.java** which will convert the coordinate file into images. 
+1. Split your images into the appropriate classes. 
 
-2- Run the program JsonToCoordinates.py with <input\_jsons> as input to parse the JSON files into a different format to be used by the image generating software. The resulting file will be xyc.txt
+<h1> Transfer Learning </h1> 
 
-3- Compile and run the Java program CoordsToJpg.java which will covert the coordinate file into images. 
-
-4- Split your images into the appropriate classes, then follow the tutorial on:
+We followed the steps outlined in this tutorial to re-train the Inception V3 neural network on our generated images:
 
 https://www.tensorflow.org/hub/tutorials/image_retraining
 
-To re-train the neural network on your own dataset, and test the re-trained model on new images.
 
-The file manualpegtopgf.tab is used to build a dictionary mapping each peg to its corresponding pgf in the reference genome dataset used. That is consequently used to color the arrows accordingly. 
--- 
-
-The reference genomes we used are listed in the file 34\_genomes.pdf
