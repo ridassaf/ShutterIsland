@@ -16,7 +16,17 @@ The following steps were performed to generate the images:
 
 <h1> Transfer Learning </h1> 
 
-We followed the steps outlined in this tutorial to re-train the Inception V3 neural network on our generated images using TensorFlow:
+Shutter Island works in 3 steps: 
+
+1. Transform the genome into a set of images, using the steps outlined above. 
+1. Re-train the Inception V3 network on the generated images (or use a network that was already re-trained to get a label for every test image). 
+1. Group genes with a genomic island label and report that as a single Genomic Island, applying a length filter of 8 kbp (i.e: the group of genes must span at least 8,000 base pairs). 
+
+These steps can be visualized in the following graphic: 
+
+<img src="ShutterIsland.png">
+
+To re-train the Incpetion V3 network on our generated images, we used Tensorflow by following the steps outlined in this tutorial:
 
 https://www.tensorflow.org/hub/tutorials/image_retraining
 
