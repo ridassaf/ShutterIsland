@@ -32,13 +32,13 @@ The model is then saved to perform future predictions. In the Testing phase, a r
 
 We list the steps needed to re-train the Incpetion V3 network on the generated images:
 
-1. Organize the data in a folder containing a subfolder for each class. The subfolder names matter because they will define the label applied to each image within them. In our example, a folder named **images** contains two subfolders: **island** and **continent**, which are the names of the two classes our network will be trained on (we refer to a genomic region that is not part of a genomic island as a continent). The name of the parent folder will be used as an argument in the next step. 
+1. Organize the data in a folder containing a subfolder for each class. The subfolder names matter because they will define the label applied to each image within them. In our example, a folder named **images/** contains two subfolders: **islands/** and **continents/**, which are the names of the two classes our network will be trained on (we refer to a genomic region that is not part of a genomic island as a continent). The name of the parent folder will be used as an argument in the next step. 
 1. From inception-retrain/, run *python retrain.py --bottleneck_dir=../images/bottlenecks --how_many_training_steps 500 --model_dir=../images/model --output_graph=../images/retrained_graph.pb --output_labels=../images/retrained_labels.txt --image_dir=../images*
 This step re-trains the model on our custom image dataset, and saves it for future use. 
 1. After the model has been trained, run python *label_image.py <test_images>*, where <test_images> is a folder containing the images we would like to perform the predictions on. We provide **ecoli_images** that contains images generated for every gene in the **Escherichia coli APEC O1** genome. This script outputs two files, **islands.txt** and **continents.txt**, enumerating the images that correspond to each class. 
 1. The last step is to run *cluster.py <genome_file>* which takes as input a genome file name (i.e. in this case: 405955.13.PATRIC.cds.tab that can be downloaded from https://patricbrc.org) and uses **islands.txt** generated earlier to group the genes labeled as part of a genomic island. The script will output *<genome_name>.islands* which contains the final island predictions. 
 
-These steps were originally outlined in a Tensoerflow tutorial on transfer learning, found at:
+These steps were extracted and modified from a Tensoerflow tutorial on transfer learning, originally found at:
 
 https://www.tensorflow.org/hub/tutorials/image_retraining
 
