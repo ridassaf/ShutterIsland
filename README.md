@@ -26,7 +26,7 @@ Shutter Island works in 3 steps:
 1. Transform the genome into a set of images, using the steps outlined in the Image Generation section above. *Note that images generated have dimensions=299x299, which is what is expected at the input layer of the network.*
 1. Re-train the Inception V3 network on the generated images. From TensorFlow's documentation: This step trains a new top layer (replacing the top layer highlighted in a red box in the image below) that can recognize other classes of images. The top layer receives as input a 2048-dimensional vector for each image. We train a softmax layer on top of this representation.
 The model is then saved to perform future predictions. In the Testing phase, a re-trained model is used to generate a label for every test image. 
-1. Group genes with a genomic island label and report the cluster as a single Genomic Island, applying a length filter of 8 kbp (i.e. the group of genes must span at least 8,000 base pairs). 
+1. Group genes with a genomic island label and report the cluster as a single Genomic Island.
 
 <img src="ShutterIsland.png">
 
