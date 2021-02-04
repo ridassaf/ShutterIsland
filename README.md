@@ -1,7 +1,12 @@
 # ShutterIsland
 
-* The file **34_genomes.pdf** lists the genomes used as the testing dataset. 
-* The file **manualpegtopfg.tab** is used to map each gene to its corresponding family. This is used to infer functionality and determine the color of the arrow representing the gene in the generated images. 
+* The folder **images** contains the training dataset used in our method. It includes two subfolders whose names define the labels. More details on this are mentioned below. 
+* The folder **ecoli_images** contains sample testing data, namely the images generated for each gene in the **Escherichia coli APEC O1** genome.
+* The folder **inception-retrain** contains the scripts needed to train the network (i.e. *retrain.py*) and generate new predictions (i.e. *label_image.py*).
+* **34_genomes.pdf** lists all the genome names used as the testing dataset. 
+* **manualpegtopfg.tab** is used to map each gene to its corresponding family. This is used to infer functionality and determine the color of the arrow representing the gene in the generated images. 
+
+The rest of the files are referenced and explained below. 
 
 <h1> Image Generation </h1> 
 
