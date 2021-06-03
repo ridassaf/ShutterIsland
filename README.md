@@ -42,3 +42,9 @@ These steps were extracted and modified from a Tensoerflow tutorial on transfer 
 
 https://www.tensorflow.org/hub/tutorials/image_retraining
 
+<hr/>
+
+To cite this work, please use:
+
+Assaf, R., Xia, F. & Stevens, R. Identifying genomic islands with deep neural networks. BMC Genomics 22, 281 (2021). https://doi.org/10.1186/s12864-021-07575-5
+
